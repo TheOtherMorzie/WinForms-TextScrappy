@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TextScrappy.Forms
 {
-    public partial class Form_CharInspector : Form
+    public partial class Form_CharInspector___CURSED : Form
     {
-        public Form_CharInspector()
+        public Form_CharInspector___CURSED()
         {
             InitializeComponent();
         }

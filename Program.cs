@@ -20,12 +20,22 @@ namespace TextFileEditor
             //S_RTime.I.AppContext = appContext_;
 
             Form? mainForm = null;
+            List<Form> forms = new List<Form>();
 
-            //new Clipboard_Info().Show();
             //new Form_CharInspector().Show();
             //new Form_DemoRichText1().Show();
 
-            mainForm = new Form_ViewerSimpleHTML();
+            //forms.Add(new Form_ViewerSimpleHTML());
+            //forms.Add(new Clipboard_Info());
+            //forms.Add(new Form_CharInspector());
+
+            //forms.Add(new DemoForm_clipboard1());
+            forms.Add(new DemoForm_HighlightText());
+
+            mainForm = forms.First();
+            forms.Remove(mainForm);
+            forms.ForEach(f => f.Show());
+
 
             if (mainForm == null) mainForm = S_RTime.I.NewEditor;
 

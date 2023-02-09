@@ -1,0 +1,87 @@
+﻿<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HtmlSanitizer Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css" integrity="sha512-FwY1WVsm4UQgrOXt6kaQ53w83cOHa8fSvjFn/BvVOCYVPmkSR39k/xnU+8hht3zW6JL1TBd4C/aVQIAV58Cg6A==" crossorigin="anonymous">
+
+    <style>
+        .mono {
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        }
+
+        .hljs {
+            padding: 9.5px;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mt-4">
+                <h1>HtmlSanitizer Online Demo</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col-md-12">
+            <p>
+                Enter some dirty HTML below and let <a href="https://github.com/mganss/HtmlSanitizer">HtmlSanitizer</a> clean it up.
+                Don't worry, input is not logged (at least not server-side) 😉 If you encounter an issue, please report it at <a href="https://github.com/mganss/HtmlSanitizer/issues/new">GitHub</a>.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mb-1">
+            <form method="post">
+                <div class="form-group">
+                    <textarea class="form-control mono" rows="10" id="Html" name="Html"></textarea>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" data-val="true" data-val-required="The Doc field is required." id="Doc" name="Doc" value="true">
+                        Parse as HTML document instead of fragment
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" data-val="true" data-val-required="The KeepChildren field is required." id="KeepChildren" name="KeepChildren" value="true">
+                        Keep child nodes of removed elements
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" data-val="true" data-val-required="The AllowData field is required." id="AllowData" name="AllowData" value="true">
+                        Allow data-* attributes
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Sanitize</button>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KMLhPkVRiJFskMaoRigm93XKHlNsuURY-XC2ZJr33ZYJDUzDdWosxulnHKRuJCVLK3yMhiVk8Akuf5Ku9TKkFghcBOcauLlUjCUuVJE3rpLc4jBSfTJVALzueIsbqLc3_WmFJriRvm0cINfyF-6nOM"><input name="Doc" type="hidden" value="false"><input name="KeepChildren" type="hidden" value="false"><input name="AllowData" type="hidden" value="false"></form>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <a href="https://github.com/mganss/HtmlSanitizer">HtmlSanitizer</a> 8.0.645.0
+    </footer>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js" integrity="sha512-tHQeqtcNWlZtEh8As/4MmZ5qpy0wj04svWFK7MIzLmUVIzaHXS8eod9OmHxyBL1UET5Rchvw7Ih4ZDv5JojZww==" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        var html = document.getElementById("sanitized");
+        if (html !== null) {
+            var hl = hljs.highlight("html", html.textContent, true);
+            html.innerHTML = hl.value;
+        }
+    });
+</script>
+
+
+
+</body></html>

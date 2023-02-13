@@ -1,6 +1,7 @@
 using Lil.Forms;
 using TextFileEditor.src.Toolkit;
 using TextScrappy.Forms;
+using WFFT_Lib.Forms;
 
 namespace TextFileEditor
 {
@@ -30,16 +31,33 @@ namespace TextFileEditor
             //forms.Add(new Form_CharInspector());
 
             //forms.Add(new DemoForm_clipboard1());
-            forms.Add(new DemoForm_HighlightText());
+            forms.Add(new Form_LilsCMDparty());
+            //forms.Add(new DemoForm_HighlightText());
 
-            mainForm = forms.First();
-            forms.Remove(mainForm);
+            mainForm = new WinFormHostForm_Simple();
+
+            if (mainForm == null)
+            {
+                mainForm = forms.First();
+                forms.Remove(mainForm);
+            }
+
+
             forms.ForEach(f => f.Show());
-
 
             if (mainForm == null) mainForm = S_RTime.I.NewEditor;
 
             Application.Run(mainForm);
         }
+
+        List<Form> GetLaunchSet_Dev()
+        {
+            List<Form> forms = new List<Form>()
+            {
+                new Form_LilsCMDparty()
+            };
+            return forms;
+        }
+
     }
 }
